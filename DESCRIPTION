@@ -1,0 +1,5 @@
+Package: pngnewsR
+Type: Package
+Title: News article web scraper for Post Courier Newspaper
+Version: 1.0
+RoxygenNote: 7.2.3
