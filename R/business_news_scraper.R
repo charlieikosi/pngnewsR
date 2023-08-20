@@ -20,6 +20,10 @@ business <- function(pages){
   
   print("Scraping Now...")
   
+  url <- "https://www.postcourier.com.pg/business/"
+  
+  page <- read_html(url)
+  
   total_pages <- as.numeric(pages)
   # while-loop counter
   i <- 1
@@ -33,7 +37,7 @@ business <- function(pages){
   # While-loop
   while (i <= total_pages) {
     
-    page <- read_html("https://www.postcourier.com.pg/national-news/")
+    page <- read_html(url)
     
     pc_topstories <- page %>%
       html_nodes("#main .entry-title a")
