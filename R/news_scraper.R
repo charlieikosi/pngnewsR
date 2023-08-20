@@ -24,19 +24,19 @@ scrape_news <- function(pages, news) {
     if (news == "national") {
       national(pages)
     }
-    if (news == "business") {
+    else if (news == "business") {
       business(pages)
     }
-    if (news == "feature") {
+    else if (news == "feature") {
       feature(pages)
     }
-    if (news == "sport") {
+    else if (news == "sport") {
       sport(pages)
     }
-    if (news == "world") {
+    else if (news == "world") {
       world(pages)
     }
-    if (news == "topstories") {
+    else if (news == "topstories") {
       topstories(pages)
     } else {
       print("Error! Please use either 'national', 'world', 'sport', 'feature', 'topstories' or 'business' as string inputs for the news argument")
