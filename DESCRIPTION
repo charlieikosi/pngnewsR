@@ -1,5 +1,10 @@
+Author: person("Charlie", "Ikosi", role = c("aut","cre"), email = "charlieikosi@gmail.com")
 Package: pngnewsR
 Type: Package
-Title: News article web scraper for Post Courier Newspaper
+Title: Scrape news articles from the Post-Courier website
+Description: Webscraping package for the Post-courier website. This package and its accompanying functions is only applicable to the Post-Courier website.
 Version: 1.0
 RoxygenNote: 7.2.3
+License: MIT + file LICENSE
+Maintainer: Charlie Arua Ikosi <charlieikosi@gmail.com>
+Imports: tidyverse, rvest, tibble

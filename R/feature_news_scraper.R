@@ -7,6 +7,9 @@
 #' df <- feature(pages = 1);
 #' df2 <- feature(1);
 #' @name feature
+#' @import rvest 
+#' @import tidyverse 
+#' @import tibble
 #' @export
 
 library(rvest)

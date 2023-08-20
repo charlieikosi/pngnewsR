@@ -7,6 +7,9 @@
 #' df <- world(pages = 1);
 #' df2 <- world(1);
 #' @name world
+#' @import rvest 
+#' @import tidyverse 
+#' @import tibble
 #' @export
 
 library(rvest)

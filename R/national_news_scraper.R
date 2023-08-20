@@ -7,6 +7,9 @@
 #' df <- national(pages = 1);
 #' df2 <- national(1);
 #' @name national
+#' @import rvest 
+#' @import tidyverse 
+#' @import tibble
 #' @export
 
 library(rvest)

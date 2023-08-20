@@ -7,6 +7,9 @@
 #' df <- topstories(pages = 1);
 #' df2 <- topstories(1);
 #' @name topstories
+#' @import rvest 
+#' @import tidyverse 
+#' @import tibble
 #' @export
 
 library(rvest)

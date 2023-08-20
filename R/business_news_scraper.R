@@ -7,6 +7,9 @@
 #' df <- business(pages = 1);
 #' df2 <- business(1);
 #' @name business
+#' @import rvest 
+#' @import tidyverse 
+#' @import tibble
 #' @export
 
 library(rvest)

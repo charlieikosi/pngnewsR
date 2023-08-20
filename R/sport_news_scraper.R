@@ -7,6 +7,9 @@
 #' df <- sport(pages = 1);
 #' df2 <- sport(1);
 #' @name sport
+#' @import rvest 
+#' @import tidyverse 
+#' @import tibble
 #' @export
 
 library(rvest)
