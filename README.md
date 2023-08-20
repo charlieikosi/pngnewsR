@@ -21,9 +21,12 @@ library(pngnewsR)
 This now allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple for the user.
 
 ##### Available Functions
-- `business()`
-- `feature()`
-- `topstories()`
-- `world()`
-- `sport()`
-- `scrape_news()`
+- `business()` scrapes only business news articles
+- `feature()` scrapes only featured news articles
+- `topstories()` scrapes only top story news articles
+- `world()` scrapes only world news articles
+- `sport()` scrapes only sport news articles
+- `scrape_news()` versatile scraper function that can be used to call the other functions.
+
+##### Usage
+All the functions except the `scrape_news()` take only one arguement, `pages`.
