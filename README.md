@@ -1,6 +1,6 @@
 by# pngnewsR <img src='man/figures/hex-pngnewsR.png' align="right" height="139" />
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![pngnewsR badge](https://img.shields.io/badge/pngnewsR-under%20development%20-yellow)]()
 [![R badge](https://img.shields.io/badge/Built%20with-♥%20and%20R-pink)](https://github.com/charlieikosi/pngnewsR/)
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#active)
