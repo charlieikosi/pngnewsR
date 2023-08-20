@@ -2,6 +2,7 @@
 ![RStudio](https://img.shields.io/badge/RStudio-4285F4?style=for-the-badge&logo=rstudio&logoColor=white)
 ![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ### Introduction
 `pngnewsR` is an open-source package developed to automate webscrapping of news articles from the Post-Courier news website. Post-Courier is Papua New Guinea based newspaper. 
 
