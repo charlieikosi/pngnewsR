@@ -18,8 +18,6 @@ library(tibble)
 
 feature <- function(pages){
   
-  cat("Scraping Now...\n")
-  
   total_pages <- as.numeric(pages)
   # while-loop counter
   i <- 1
@@ -31,13 +29,21 @@ feature <- function(pages){
   
   url <- "https://www.postcourier.com.pg/new-category/features-news/"
   
+  validate_pg <- page_validate(pages, url)
+  
+  if(is.null(validate_pg)) {
+
+  } else {
+    
+    cat("Scraping Now...\n")
+  
   # While-loop
   while (i <= total_pages) {
     
     page <- read_html(url)
     
     pc_topstories <- page %>%
-      html_nodes("#main .entry-title a")
+      html_nodes("#main .entry-title a") 
     
     pc_topstories_title <- pc_topstories %>%
       html_text()
@@ -73,7 +79,7 @@ feature <- function(pages){
   cat("Scraping Completed!\n")
   
   return(df)
-  
+  }
 }
 
 
