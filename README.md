@@ -1,4 +1,4 @@
-# pngnewsR <img src='man/figures/hex-pngnewsR.png' align="right" height="139" />
+# pngnewsR <img src='man/figures/pngnewsR.png' align="right" height="139" />
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![pngnewsR badge](https://img.shields.io/badge/pngnewsR-under%20development%20-yellow)]()
