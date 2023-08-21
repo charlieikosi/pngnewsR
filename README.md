@@ -22,7 +22,7 @@ Load the package using the script:
 ```
 library(pngnewsR)
 ```
-This allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple.
+This allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple. You can visit [this link](https://www.postcourier.com.pg/) to understand what sections of the website the functions are scraping.
 
 ##### Available Functions
 - `business()` scrapes only business news articles
@@ -30,11 +30,12 @@ This allows you to utilize several of `pngnewsR`'s webscraping functions. These 
 - `topstories()` scrapes only top story news articles
 - `world()` scrapes only world news articles
 - `sport()` scrapes only sport news articles
-- `scrape_news()` versatile scraper function that can be used to call the other functions.
+- `scrape_news()` scraper function that can be used to call other functions listed above.
 
 ##### Usage
-All the functions except the `scrape_news()` take only one arguement, `pages`. `pages` argument must be an integer. 
-`scrape_news()` takes two arguments, `pages` and `news`. `news` argument takes in a character string and must be either `"business", "sport", "world", "national", "topstories", "feature"`.
+All functions except the `scrape_news()` take only one arguement, `pages` which must be an integer. 
+
+`scrape_news()` takes two arguments i.e. `pages` and `news`. The `news` argument takes in a character string and must be either `"business", "sport", "world", "national", "topstories" or "feature"`.
 ##### Examples
 ```
 business_df <- business(page=1)
@@ -45,9 +46,9 @@ topstories_df2 <- scrape_news(page=2,news="topstories")
 ```
 ##### Outputs
 `pngnewsR` functions endeavour to structure all scrapped data into tabular form as a tibble. Three columns make up the tabular data:
-- Pub.Date - This is the date of publication
-- Top.Stories - Title of News articles
--  URL - Article url from which it was scrapped
+- Pub.Date - date of publication
+- Top.Stories - title of news articles
+-  URL - article url from which it was scrapped
 
 ```
 # A tibble: 10 × 3
@@ -65,4 +66,10 @@ topstories_df2 <- scrape_news(page=2,news="topstories")
 10 August 18, 2023 Frangipani Festival set                            https://www.postcourier.com.pg/…
 > 
 ```
+#### Demonstration
+To demonstrate the pngnewsR package functions, we have created a basic [rshiny app](https://niuginitravelor.shinyapps.io/pngnewsRApp/) that will enable non-coders to work on the front-end which is user friendly. We've also included an added option to download the scraped data as a .csv
+
+![](man/figures/shiny.png)
+
+
 
