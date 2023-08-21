@@ -3,6 +3,7 @@
 export(business)
 export(feature)
 export(national)
+export(page_validate)
 export(scrape_news)
 export(sport)
 export(topstories)

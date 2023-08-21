@@ -18,8 +18,6 @@ library(tibble)
 
 sport <- function(pages){
   
-  cat("Scraping Now...\n")
-  
   total_pages <- as.numeric(pages)
   # while-loop counter
   i <- 1
@@ -30,6 +28,14 @@ sport <- function(pages){
   pubUrl <- c()
   
   url <- "https://www.postcourier.com.pg/sports/"
+  
+  validate_pg <- page_validate(pages, url)
+  
+  if(is.null(validate_pg)) {
+    
+  } else {
+  
+  cat("Scraping Now...\n")
   
   # While-loop
   while (i <= total_pages) {
@@ -73,5 +79,5 @@ sport <- function(pages){
   cat("Scraping Completed!\n")
   
   return(df)
-  
+  }
 }

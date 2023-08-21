@@ -18,7 +18,7 @@ library(tibble)
 
 world <- function(pages){
   
-  cat("Scraping Now...\n")
+  
   
   total_pages <- as.numeric(pages)
   # while-loop counter
@@ -30,6 +30,14 @@ world <- function(pages){
   pubUrl <- c()
   
   url <- "https://www.postcourier.com.pg/world-news/"
+  
+  validate_pg <- page_validate(pages, url)
+  
+  if(is.null(validate_pg)) {
+    
+  } else {
+  
+  cat("Scraping Now...\n")
   
   # While-loop
   while (i <= total_pages) {
@@ -73,5 +81,5 @@ world <- function(pages){
   cat("Scraping Completed!\n")
   
   return(df)
-  
+  }
 }
