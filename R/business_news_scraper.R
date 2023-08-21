@@ -29,11 +29,12 @@ business <- function(pages){
   pubTitle <- c()
   pubUrl <- c()
   
+  url <- "https://www.postcourier.com.pg/business/"
   
   # While-loop
   while (i <= total_pages) {
     
-    page <- read_html("https://www.postcourier.com.pg/business/")
+    page <- read_html(url)
     
     pc_topstories <- page %>%
       html_nodes("#main .entry-title a")
