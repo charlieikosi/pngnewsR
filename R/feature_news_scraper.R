@@ -18,7 +18,7 @@ library(tibble)
 
 feature <- function(pages){
   
-  print("Scraping Now...")
+  cat("Scraping Now...\n")
   
   total_pages <- as.numeric(pages)
   # while-loop counter
@@ -52,7 +52,7 @@ feature <- function(pages){
       html_text()
     pubDate <- append(pubDate, pc_topstories_date)
     
-    print(i)
+    message("Page ", i, " of ", total_pages, " scraped.\n")
     
     i <- i + 1
     
@@ -70,7 +70,7 @@ feature <- function(pages){
     URL = pubUrl
   )
   
-  print("Scrapping Completed!")
+  cat("Scraping Completed!\n")
   
   return(df)
   
