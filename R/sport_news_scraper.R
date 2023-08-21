@@ -29,11 +29,12 @@ sport <- function(pages){
   pubTitle <- c()
   pubUrl <- c()
   
+  url <- "https://www.postcourier.com.pg/sports/"
   
   # While-loop
   while (i <= total_pages) {
     
-    page <- read_html("https://www.postcourier.com.pg/sports/")
+    page <- read_html(url)
     
     pc_topstories <- page %>%
       html_nodes("#main .entry-title a")
