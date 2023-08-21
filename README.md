@@ -22,7 +22,7 @@ Load the package using the script:
 ```
 library(pngnewsR)
 ```
-This allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple.
+This allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple. You can visit [this link](https://www.postcourier.com.pg/) to understand what sections of the website the functions are scraping.
 
 ##### Available Functions
 - `business()` scrapes only business news articles
@@ -30,7 +30,7 @@ This allows you to utilize several of `pngnewsR`'s webscraping functions. These 
 - `topstories()` scrapes only top story news articles
 - `world()` scrapes only world news articles
 - `sport()` scrapes only sport news articles
-- `scrape_news()` versatile scraper function that can be used to call the other functions.
+- `scrape_news()` scraper function that can be used to call the other functions.
 
 ##### Usage
 All the functions except the `scrape_news()` take only one arguement, `pages`. `pages` argument must be an integer. 
@@ -45,9 +45,9 @@ topstories_df2 <- scrape_news(page=2,news="topstories")
 ```
 ##### Outputs
 `pngnewsR` functions endeavour to structure all scrapped data into tabular form as a tibble. Three columns make up the tabular data:
-- Pub.Date - This is the date of publication
-- Top.Stories - Title of News articles
--  URL - Article url from which it was scrapped
+- Pub.Date - date of publication
+- Top.Stories - title of news articles
+-  URL - article url from which it was scrapped
 
 ```
 # A tibble: 10 × 3
