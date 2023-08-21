@@ -17,9 +17,7 @@ library(tidyverse)
 library(tibble)
 
 national <- function(pages){
-  
-  cat("Scraping Now...\n")
-  
+
   total_pages <- as.numeric(pages)
   # while-loop counter
   i <- 1
@@ -30,6 +28,14 @@ national <- function(pages){
   pubUrl <- c()
   
   url <- "https://www.postcourier.com.pg/national-news/"
+
+  validate_pg <- page_validate(pages, url)
+  
+  if(is.null(validate_pg)) {
+    
+  } else {
+  
+  cat("Scraping Now...\n")
   
   # While-loop
   while (i <= total_pages) {
@@ -73,7 +79,7 @@ national <- function(pages){
   cat("Scraping Completed!\n")
   
   return(df)
-  
+  } 
 }
 
 
