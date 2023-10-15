@@ -47,31 +47,51 @@ world <- function(pages){
     pc_topstories <- page %>%
       html_nodes("#main .entry-title a")
     
-    pc_topstories_title <- pc_topstories %>%
-      html_text()
-    
-    if (length(pc_topstories_title) == 0) {
-      pc_topstories_title <- "NA"
-    }
+    tryCatch(
+      {
+        pc_topstories_title <- pc_topstories %>%
+          html_text()
+        if (length(pc_topstories_title) == 0) {
+          pc_topstories_title <- "NA"
+        } 
+      },
+      error=function(e) {
+        message("An error occured")
+        pc_topstories_title <- "NA"
+      })
     
     pubTitle <- append(pubTitle, pc_topstories_title)
     
-    pc_topstories_url <- pc_topstories %>%
-      html_attr("href")
-    
-    if (length(pc_topstories_url) == 0) {
-      pc_topstories_url <- "NA"
-    }
+    tryCatch(
+      {
+        pc_topstories_url <- pc_topstories %>%
+          html_text()
+        if (length(pc_topstories_url) == 0) {
+          pc_topstories_url <- "NA"
+        } 
+      },
+      error=function(e) {
+        message("An error occured")
+        pc_topstories_url <- "NA"
+      })
     
     pubUrl <- append(pubUrl, pc_topstories_url)
     
-    pc_topstories_date <- page %>%
-      html_nodes("#main .published") %>%
-      html_text()
-    
-    if (length(pc_topstories_date) == 0) {
-      pc_topstories_date <- "NA"
-    }
+    tryCatch( 
+      {
+        pc_topstories_date <- page %>%
+          html_nodes("#main .published") %>%
+          html_text()
+        if (length(pc_topstories_date) == 0) {
+          pc_topstories_date <- "NA"
+        }
+        
+      },
+      
+      error=function(e) {
+        message("An error ocurred")
+        pc_topstories_date <- "NA"
+      })
     
     pubDate <- append(pubDate, pc_topstories_date)
     
