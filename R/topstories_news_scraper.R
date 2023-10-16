@@ -64,7 +64,7 @@ topstories <- function(pages){
     tryCatch(
       {
         pc_topstories_url <- pc_topstories %>%
-          html_text()
+          html_attr("href")
         if (length(pc_topstories_url) == 0) {
           pc_topstories_url <- "NA"
         } 
