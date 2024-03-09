@@ -1,23 +1,23 @@
-#' Business News Scraper
+#' National News Scraper (Loop PNG)
 #' 
-#' Scrapes business news articles from the post-courier news website
+#' Scrapes national news articles from loop png website
 #' @param pages Takes an integer value as input. This allows the script to page through the website.
 #' @return Returns an object of class 'tibble'
 #' @examples 
-#' df <- business(pages = 1);
-#' df2 <- business(1);
-#' @name business
+#' df <- national_lp(pages = 1);
+#' df2 <- national_lp(1);
+#' @name national_lp
 #' @import rvest 
 #' @import tidyverse 
 #' @import tibble
 #' @export
 
 library(rvest)
-library(dplyr)
+library(tidyverse)
 library(tibble)
 
-business <- function(pages){
-  
+national_lp <- function(pages){
+
   total_pages <- as.numeric(pages)
   # while-loop counter
   i <- 1
@@ -27,14 +27,8 @@ business <- function(pages){
   pubTitle <- c()
   pubUrl <- c()
   
-  url <- "https://www.postcourier.com.pg/business/"
-  
-  validate_pg <- page_validate(pages, url)
-  
-  if(is.null(validate_pg)) {
-    
-  } else {
-  
+  url <- "https://www.looppng.com/section/40068"
+
   cat("Scraping Now...\n")
   
   # While-loop
@@ -42,10 +36,8 @@ business <- function(pages){
     
     page <- read_html(url)
     
-    # ----Scrape Title----
-    
     pc_topstories <- page %>%
-      html_nodes("#main .entry-title a")
+      html_nodes(".news-title a")
     
     tryCatch(
       {
@@ -62,12 +54,13 @@ business <- function(pages){
     
     pubTitle <- append(pubTitle, pc_topstories_title)
     
-    # ----Scrape URL----
-    
-     tryCatch(
+    tryCatch(
       {
         pc_topstories_url <- pc_topstories %>%
           html_attr("href")
+        base_url <- "https://www.looppng.com"
+        pc_topstories_url <- paste(base_url,pc_topstories_url, sep="")
+        
         if (length(pc_topstories_url) == 0) {
           pc_topstories_url <- "NA"
         } 
@@ -82,14 +75,14 @@ business <- function(pages){
     tryCatch( 
       {
         pc_topstories_date <- page %>%
-          html_nodes("#main .published") %>%
+          html_nodes(".news-posted") %>%
           html_text()
         if (length(pc_topstories_date) == 0) {
           pc_topstories_date <- "NA"
-          }
+        }
+        
+      },
       
-    },
-    
       error=function(e) {
         message("An error ocurred")
         pc_topstories_date <- "NA"
@@ -103,8 +96,9 @@ business <- function(pages){
     
     # Next page url
     url <- page %>%
-      html_nodes(".next") %>%
+      html_nodes(".pager-next a") %>%
       html_attr("href")
+    url <- paste(base_url,url, sep="")
     
   }
   
@@ -118,5 +112,8 @@ business <- function(pages){
   cat("Scraping Completed!\n")
   
   return(df)
-  }
-}
+  } 
+
+
+
+

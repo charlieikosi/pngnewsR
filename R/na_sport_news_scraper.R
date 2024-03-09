@@ -1,12 +1,12 @@
-#' National News Scraper
+#' Sports News Scraper (The National News Paper)
 #' 
-#' Scrapes national news articles from the post-courier news website
+#' Scrapes sports news articles from the national news website
 #' @param pages Takes an integer value as input. This allows the script to page through the website.
 #' @return Returns an object of class 'tibble'
 #' @examples 
-#' df <- national(pages = 1);
-#' df2 <- national(1);
-#' @name national
+#' df <- sport_na(pages = 1);
+#' df2 <- sport_na(1);
+#' @name sport_na
 #' @import rvest 
 #' @import tidyverse 
 #' @import tibble
@@ -16,8 +16,8 @@ library(rvest)
 library(tidyverse)
 library(tibble)
 
-national <- function(pages){
-
+sport_na <- function(pages){
+  
   total_pages <- as.numeric(pages)
   # while-loop counter
   i <- 1
@@ -27,15 +27,7 @@ national <- function(pages){
   pubTitle <- c()
   pubUrl <- c()
   
-  url <- "https://www.postcourier.com.pg/national-news/"
-
-  validate_pg <- page_validate(pages, url)
-  
-  if(is.null(validate_pg)) {
-    
-  } else {
-  
-  cat("Scraping Now...\n")
+  url <- "https://www.thenational.com.pg/category/sports/"
   
   # While-loop
   while (i <= total_pages) {
@@ -43,7 +35,7 @@ national <- function(pages){
     page <- read_html(url)
     
     pc_topstories <- page %>%
-      html_nodes("#main .entry-title a")
+      html_nodes(".entry-title a")
     
     tryCatch(
       {
@@ -78,7 +70,7 @@ national <- function(pages){
     tryCatch( 
       {
         pc_topstories_date <- page %>%
-          html_nodes("#main .published") %>%
+          html_nodes(".updated") %>%
           html_text()
         if (length(pc_topstories_date) == 0) {
           pc_topstories_date <- "NA"
@@ -99,7 +91,7 @@ national <- function(pages){
     
     # Next page url
     url <- page %>%
-      html_nodes(".next") %>%
+      html_nodes(".nav-previous a") %>%
       html_attr("href")
     
   }
@@ -114,8 +106,4 @@ national <- function(pages){
   cat("Scraping Completed!\n")
   
   return(df)
-  } 
-}
-
-
-
+  }

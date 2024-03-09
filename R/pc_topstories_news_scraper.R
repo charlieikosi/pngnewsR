@@ -1,12 +1,12 @@
-#' World News Scraper
+#' Top Stories News Scraper
 #' 
-#' Scrapes world news articles from the post-courier news website
+#' Scrapes top stories news articles from the post-courier news website
 #' @param pages Takes an integer value as input. This allows the script to page through the website.
 #' @return Returns an object of class 'tibble'
 #' @examples 
-#' df <- world(pages = 1);
-#' df2 <- world(1);
-#' @name world
+#' df <- topstories_pc(pages = 1);
+#' df2 <- topstories_pc(1);
+#' @name topstories_pc
 #' @import rvest 
 #' @import tidyverse 
 #' @import tibble
@@ -16,9 +16,8 @@ library(rvest)
 library(tidyverse)
 library(tibble)
 
-world <- function(pages){
-  
-  
+
+topstories_pc <- function(pages){
   
   total_pages <- as.numeric(pages)
   # while-loop counter
@@ -29,7 +28,7 @@ world <- function(pages){
   pubTitle <- c()
   pubUrl <- c()
   
-  url <- "https://www.postcourier.com.pg/world-news/"
+  url <- "https://www.postcourier.com.pg/top-stories/"
   
   validate_pg <- page_validate(pages, url)
   
@@ -118,3 +117,4 @@ world <- function(pages){
   return(df)
   }
 }
+

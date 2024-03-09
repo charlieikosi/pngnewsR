@@ -1,22 +1,22 @@
-#' Sports News Scraper
+#' Business News Scraper
 #' 
-#' Scrapes sports news articles from the post-courier news website
+#' Scrapes business news articles from the post-courier news website
 #' @param pages Takes an integer value as input. This allows the script to page through the website.
 #' @return Returns an object of class 'tibble'
 #' @examples 
-#' df <- sport(pages = 1);
-#' df2 <- sport(1);
-#' @name sport
+#' df <- business_pc(pages = 1);
+#' df2 <- business_pc(1);
+#' @name business_pc
 #' @import rvest 
 #' @import tidyverse 
 #' @import tibble
 #' @export
 
 library(rvest)
-library(tidyverse)
+library(dplyr)
 library(tibble)
 
-sport <- function(pages){
+business_pc <- function(pages){
   
   total_pages <- as.numeric(pages)
   # while-loop counter
@@ -27,7 +27,7 @@ sport <- function(pages){
   pubTitle <- c()
   pubUrl <- c()
   
-  url <- "https://www.postcourier.com.pg/sports/"
+  url <- "https://www.postcourier.com.pg/business/"
   
   validate_pg <- page_validate(pages, url)
   
@@ -41,6 +41,8 @@ sport <- function(pages){
   while (i <= total_pages) {
     
     page <- read_html(url)
+    
+    # ----Scrape Title----
     
     pc_topstories <- page %>%
       html_nodes("#main .entry-title a")
@@ -60,7 +62,9 @@ sport <- function(pages){
     
     pubTitle <- append(pubTitle, pc_topstories_title)
     
-    tryCatch(
+    # ----Scrape URL----
+    
+     tryCatch(
       {
         pc_topstories_url <- pc_topstories %>%
           html_attr("href")
@@ -82,10 +86,10 @@ sport <- function(pages){
           html_text()
         if (length(pc_topstories_date) == 0) {
           pc_topstories_date <- "NA"
-        }
-        
-      },
+          }
       
+    },
+    
       error=function(e) {
         message("An error ocurred")
         pc_topstories_date <- "NA"

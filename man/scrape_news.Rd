@@ -2,22 +2,24 @@
 % Please edit documentation in R/news_scraper.R
 \name{scrape_news}
 \alias{scrape_news}
-\title{Post Courier News Article Scraper}
+\title{News Article Scraper}
 \usage{
-scrape_news(pages, news)
+scrape_news(pages, news, agent)
 }
 \arguments{
 \item{pages}{Takes an integer value as input. This allows the script to page through the website.}
 
 \item{news}{News tab from which to scrape articles. Allowable news tabs are 'business', 'feature', 'national','sports','topstories' and 'world'.}
+
+\item{agent}{Name of News Agency to scrape articles from. Supports three news outlets: 'postcourier', 'looppng' and 'thenational'.}
 }
 \value{
 Returns an object of class 'tibble'
 }
 \description{
-Scrapes any news articles from the postcourier news website
+Scrapes any news articles from the news website
 }
 \examples{
-df <- scrape_news(pages = 1, news = 'business');
-df2 <- scrape_news(1,'business');
+df <- scrape_news(pages = 1, news = 'business', agent = 'thenational');
+df2 <- scrape_news(1,'business','thenational');
 }
