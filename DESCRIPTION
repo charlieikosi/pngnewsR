@@ -1,9 +1,9 @@
 Author: person("Charlie", "Ikosi", role = c("aut","cre"), email = "charlieikosi@gmail.com")
 Package: pngnewsR
 Type: Package
-Title: Scrape news articles from the Post-Courier website
-Description: Webscraping package for the Post-courier website. This package and its accompanying functions is only applicable to the Post-Courier website.
-Version: 1.0
+Title: Scrape news articles from online Papua New Guinea news agencies.
+Description: Webscraping package for Papua New Guinea news articles. This package and its accompanying functions is only applicable to Post-Courier, The National and Loop PNG website.
+Version: 1.1
 RoxygenNote: 7.2.3
 License: MIT + file LICENSE
 Maintainer: Charlie Arua Ikosi <charlieikosi@gmail.com>
