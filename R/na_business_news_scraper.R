@@ -4,8 +4,7 @@
 #' @param pages Takes an integer value as input. This allows the script to page through the website.
 #' @return Returns an object of class 'tibble'
 #' @examples 
-#' df <- business_na(pages = 1);
-#' df2 <- business_na(1);
+#' df <- business_na(1);
 #' @name business_na
 #' @import rvest 
 #' @import tidyverse 

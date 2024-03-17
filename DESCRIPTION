@@ -1,8 +1,8 @@
 Author: Charlie Ikosi [aut, cre, cph]
 Package: pngnewsR
 Type: Package
-Title: Scrape News Articles from Online Papua New Guinea News Agencies
-Description: Web scraping package for Papua New Guinea news articles. This package and its accompanying functions is only applicable to Post-Courier, The National and Loop PNG website.
+Title: Scrape News Articles from Online 'Papua' New Guinea News Agencies
+Description: Web scraping package for 'Papua' New Guinea news articles. This package and its accompanying functions is only applicable to Post-Courier, The National and Loop 'PNG' website.
 Version: 1.1
 RoxygenNote: 7.2.3
 License: MIT + file LICENSE
