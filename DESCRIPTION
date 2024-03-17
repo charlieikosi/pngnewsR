@@ -1,10 +1,10 @@
-Author: person("Charlie", "Ikosi", role = c("aut","cre"), email = "charlieikosi@gmail.com")
+Author: Charlie Ikosi [aut, cre, cph]
 Package: pngnewsR
 Type: Package
-Title: Scrape news articles from online Papua New Guinea news agencies
-Description: Webscraping package for Papua New Guinea news articles. This package and its accompanying functions is only applicable to Post-Courier, The National and Loop PNG website.
+Title: Scrape News Articles from Online Papua New Guinea News Agencies
+Description: Web scraping package for Papua New Guinea news articles. This package and its accompanying functions is only applicable to Post-Courier, The National and Loop PNG website.
 Version: 1.1
 RoxygenNote: 7.2.3
 License: MIT + file LICENSE
 Maintainer: Charlie Arua Ikosi <charlieikosi@gmail.com>
-Imports: tidyverse, rvest, tibble
+Imports: tidyverse (>= 2.0.0), rvest, tibble
