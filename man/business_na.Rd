@@ -13,6 +13,5 @@ Returns an object of class 'tibble'
 Scrapes business news articles from the national news website
 }
 \examples{
-df <- business_na(pages = 1);
-df2 <- business_na(1);
+df <- business_na(1);
 }
