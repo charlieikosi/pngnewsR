@@ -24,7 +24,7 @@ Load the package using the script:
 ```
 library(pngnewsR)
 ```
-This allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple. You can visit [this link](https://www.postcourier.com.pg/) to understand what sections of the website the functions are scraping.
+This allows you to utilize several of `pngnewsR`'s webscraping functions.
 
 ##### Available Functions
 - `business_lp()` scrapes only business news articles from loop png news website
