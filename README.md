@@ -24,7 +24,7 @@ Load the package using the script:
 ```
 library(pngnewsR)
 ```
-This allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple. You can visit [this link](https://www.postcourier.com.pg/) to understand what sections of the website the functions are scraping.
+This allows you to utilize several of `pngnewsR`'s webscraping functions.
 
 ##### Available Functions
 - `article_content()` scrapes news article content only
@@ -53,6 +53,7 @@ The `article_content()` takes only a url argument of class Character. This url m
 ```
 url <- "https://www.looppng.com/business/fiscal-stability-agreement-p%E2%80%99nyang-signed-125267"
 news_content <- article_content(url)
+`scrape_news()` takes three arguments i.e. `pages` and `news` and `agent`. The `news` argument takes in a character string and must be either `"business", "sport", "world", "national", "topstories" or "feature"`. The `agent` argument takes in character strings and must either be "postcourier", "looppng" or "thenational".
 business_df <- business_lp(page=1)
 topstories_df <- topstories_pc(1)
 num <- 1
@@ -82,6 +83,6 @@ topstories_df2 <- scrape_news(page=2,news="topstories", "postcourier)
 > 
 ```
 #### Demonstration
-To demonstrate the pngnewsR package functions, we have created a basic [rshiny app](https://niuginitravelor.shinyapps.io/pngnewsRApp/) that will enable non-coders to work on the front-end which is user friendly. We've also included an added option to download the scraped data as a .csv
+To demonstrate the pngnewsR package functions, we have created a basic [rshiny app](https://niuginitravelor.shinyapps.io/pngnewsRShiny/) that will enable non-coders to work on the front-end which is user friendly. We've also included an added option to download the scraped data as a .csv
 
 ![](man/figures/shiny.png)
