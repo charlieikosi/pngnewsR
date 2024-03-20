@@ -8,6 +8,9 @@
 #' content <- article_content(url);
 #' @name article_content
 #' @import rvest
+#' @import utils
+#' @import httr
+#' @import dplyr
 #' @export
 
 library(rvest)
