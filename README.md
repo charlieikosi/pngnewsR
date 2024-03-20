@@ -27,6 +27,7 @@ library(pngnewsR)
 This allows you to utilize several of `pngnewsR`'s webscraping functions. These functions are named against the category of news articles hosted on the Post-Courier news website to make things simple. You can visit [this link](https://www.postcourier.com.pg/) to understand what sections of the website the functions are scraping.
 
 ##### Available Functions
+- `article_content()` scrapes news article content only
 - `business_lp()` scrapes only business news articles from loop png news website
 - `business_na()` scrapes only business news articles from the national news website
 - `business_pc()` scrapes only business news articles from the post courier news website
@@ -42,11 +43,16 @@ This allows you to utilize several of `pngnewsR`'s webscraping functions. These 
 - `scrape_news()` scraper function that can be used to call other functions listed above.
 
 ##### Usage
-All functions except the `scrape_news()` take only one arguement, `pages` which must be an integer. 
+All functions except the `scrape_news()` take only one argument, `pages` which must be an integer. 
 
 `scrape_news()` takes three arguments i.e. `pages` and `news` and `agent`. The `news` argument takes in a character string and must be either `"business", "sport", "world", "national", "topstories" or "feature"`. The `agent` argument takes in character strings and must either be "postcourier", "looppng" or "thenational".
+
+The `article_content()` takes only a url argument of class Character. This url must have a base/hostname from Post Courier, Loop PNG and The National news websites only.
+
 ##### Examples
 ```
+url <- "https://www.looppng.com/business/fiscal-stability-agreement-p%E2%80%99nyang-signed-125267"
+news_content <- article_content(url)
 business_df <- business_lp(page=1)
 topstories_df <- topstories_pc(1)
 num <- 1
