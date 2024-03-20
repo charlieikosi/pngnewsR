@@ -76,7 +76,7 @@ topstories_df2 <- scrape_news(page=2,news="topstories", "postcourier)
 > 
 ```
 #### Demonstration
-To demonstrate the pngnewsR package functions, we have created a basic [rshiny app](https://niuginitravelor.shinyapps.io/pngnewsRApp/) that will enable non-coders to work on the front-end which is user friendly. We've also included an added option to download the scraped data as a .csv
+To demonstrate the pngnewsR package functions, we have created a basic [rshiny app](https://niuginitravelor.shinyapps.io/pngnewsRShiny/) that will enable non-coders to work on the front-end which is user friendly. We've also included an added option to download the scraped data as a .csv
 
 ![](man/figures/shiny.png)
 
